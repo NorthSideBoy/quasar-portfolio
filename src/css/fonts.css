@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'fira-bold';
+  src: url('../assets/fonts/fira-bold.otf');
+}
+
+@font-face {
+  font-family: 'fira-medium';
+  src: url('../assets/fonts/fira-medium.otf');
+}
+
+@font-face {
+  font-family: 'fira-regular';
+  src: url('../assets/fonts/fira-regular.otf');
+}
