@@ -16,13 +16,13 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="drawer" side="left" class="interfaz" :width="260">
+    <q-drawer show-if-above v-model="drawer" side="left" class="interfaz" :width="260" style="position: relative;">
       <div class="q-pt-md text-white">
         <q-item clickable v-ripple to="/" active-class="link">
           <q-item-section>
-              <div class="q-pl-md" style="color: #58A6FF; font-size: calc(4px + 1vw); font-family: 'fira-bold';">
-                QUASAR-PORTFOLIO
-              </div>
+            <div class="q-pl-md" style="color: #58A6FF; font-size: calc(4px + 1vw); font-family: 'fira-bold';">
+              QUASAR-PORTFOLIO
+            </div>
           </q-item-section>
         </q-item>
 
@@ -125,6 +125,21 @@
         </q-list>
       </div>
 
+      <q-item style="position: absolute; bottom: 0;">
+        <q-item-section>
+          <q-item-label>
+            <span class="text-weight-medium" style="font-family: 'fira-bold'; color:#D7AC3B">[quasar-portfolio]</span>
+            <span class="text-grey-8"> - GitHub repository</span>
+          </q-item-label>
+          <q-item-label caption style="font-family: 'fira-bold'" class="text-white">
+            @northsideboy - saidlucena519@gmail.com
+          </q-item-label>
+          <q-item-label class="q-mt-xs text-uppercase" style="font-family:'fira-bold'; color:#58A6FF">
+            <span class="cursor-pointer">Open in GitHub</span>
+          </q-item-label>
+        </q-item-section>
+      </q-item>
+
     </q-drawer>
 
     <q-page-container>
@@ -205,7 +220,7 @@ export default {
   }
 }
 
-.link{
-  color:#D29922
+.link {
+  color: #D29922
 }
 </style>
