@@ -1,5 +1,5 @@
 <template>
-    <div id="particles-js" class="particles"></div>
+    <div id="particles-js-blue" class="particles"></div>
 </template>
 <script>
 import { ref, onMounted } from 'vue'
@@ -11,7 +11,7 @@ export default {
     })
 
     const initParticles = () => {
-      window.particlesJS("particles-js", {
+      window.particlesJS("particles-js-blue", {
         "particles": {
           "number": {
             "value": 50,
@@ -56,7 +56,7 @@ export default {
           "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#DE5B18",
+            "color": "#1D8EF0",
             "opacity": 0.4,
             "width": 1
           },
@@ -117,7 +117,6 @@ export default {
         "retina_detect": true
       })
     }
-    
     return {
       initParticles
     }

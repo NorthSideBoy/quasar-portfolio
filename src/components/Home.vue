@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative;">
+  <div style="position: relative;" class="q-pt-md">
     <Particles style="position: absolute; bottom: 0; height: 100vh; width: 80vw;"></Particles>
     <div style="font-family: 'fira-medium';" class="q-pl-lg">
       <span style="color: #A5D6F0">

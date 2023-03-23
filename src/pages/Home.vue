@@ -6,7 +6,9 @@
       </span>
     </div>
     <section>
-      <Home />
+      <div style="height:calc(93vh - 65px)" class="column justify-center">
+        <Home />
+      </div>
     </section>
     <div style="font-family: 'fira-medium';" class="q-pl-md">
       <span style="color: #A5D6F0">

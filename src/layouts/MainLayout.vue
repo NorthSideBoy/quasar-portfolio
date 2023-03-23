@@ -16,7 +16,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="drawer" side="left" class="interfaz" :width="260" style="position: relative;">
+    <q-drawer show-if-above v-model="drawer" side="left" class="interfaz" :width="260" style="position: relative; ">
       <div class="q-pt-md text-white">
         <q-item clickable v-ripple to="/" active-class="link">
           <q-item-section>
@@ -59,7 +59,7 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="/AboutMe" active-class="link">
             <q-item-section>
               <div style="padding-left: 30px;" class="row">
                 <q-icon style="color:#4CAF50; font-size: 2em;" :name="mdiVuejs">
