@@ -21,6 +21,7 @@
         <q-item clickable v-ripple to="/" active-class="link">
           <q-item-section>
             <div class="q-pl-md" style="color: #58A6FF; font-size: calc(4px + 1vw); font-family: 'fira-bold';">
+              <q-icon :name="mdiConsoleLine" size="sm" style="color:white"/>
               QUASAR-PORTFOLIO
             </div>
           </q-item-section>
@@ -136,6 +137,7 @@
           </q-item-label>
           <q-item-label class="q-mt-xs text-uppercase" style="font-family:'fira-bold'; color:#58A6FF">
             <span class="cursor-pointer">Open in GitHub</span>
+            <q-icon class="q-pl-sm" style="color: white;" size="sm" name="fi-brands-github"></q-icon>
           </q-item-label>
         </q-item-section>
       </q-item>
@@ -158,7 +160,8 @@ import {
   mdiChevronDown,
   mdiFolderOpen,
   mdiVuejs,
-  mdiConsole
+  mdiConsole,
+  mdiConsoleLine
 } from '@mdi/js';
 
 
@@ -183,12 +186,14 @@ export default {
       mdiChevronDown,
       mdiFolderOpen,
       mdiVuejs,
-      mdiConsole
+      mdiConsole,
+      mdiConsoleLine
     }
   }
 }
 </script>
-<style lang="scss">
+<style>
+@import "~@flaticon/flaticon-uicons/css/all/all";
 @import 'animate.css';
 
 .interfaz {
