@@ -12,3 +12,8 @@
   font-family: 'fira-regular';
   src: url('../assets/fonts/fira-regular.otf');
 }
+
+@font-face {
+  font-family: 'fira-light';
+  src: url('../assets/fonts/fira-light.ttf');
+}
