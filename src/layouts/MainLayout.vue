@@ -6,7 +6,7 @@
         <q-icon :name="mdiConsole" size="lg">
 
         </q-icon>
-        <q-toolbar-title style="font-family: 'fira-bold'; color:#03A062">
+        <q-toolbar-title style="font-family: 'fira-bold'; color:#D7AC3B;">
           <div class="typing" style=" font-size: calc(4px + 1.5vw);">
             NorthSideBoy
           </div>
