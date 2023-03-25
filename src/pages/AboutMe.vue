@@ -4,7 +4,7 @@
       <span style="color: #a5d6f0"> &lt;template&gt; </span>
     </div>
     <section>
-      <div style="height: calc(93vh - 65px)" class="column justify-center">
+      <div style="height:100%" class="column justify-center">
         <AboutMe />
       </div>
     </section>

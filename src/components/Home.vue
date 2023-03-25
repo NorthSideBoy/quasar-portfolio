@@ -54,8 +54,9 @@
         </span>
       </div>
     </div>
-    <div style="padding-left: 5vw;" class="q-pt-lg q-pb-lg" >
-      <q-btn class="q-pl-lg q-pr-lg animate__animated animate__headShake animate__delay-1s" flat label="CONTACTAME" v-if="contact"
+    <div style="padding-left: 5vw;" class="q-pt-lg q-pb-lg">
+      <q-btn class="q-pl-lg q-pr-lg animate__animated animate__headShake animate__delay-1s" flat label="CONTACTAME"
+        v-if="contact"
         style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 0px 0px 0px 0px;"
         size="lg">
       </q-btn>

@@ -46,7 +46,7 @@
         </q-item>
 
         <q-list v-if="folder" class="animate__animated animate__fadeIn">
-          <q-item clickable v-ripple to="/Home" active-class="link">
+          <q-item clickable v-ripple active-class="link">
             <q-item-section>
               <div style="padding-left: 30px;" class="row">
                 <q-icon style="color:#4CAF50; font-size: 2em;" :name="mdiVuejs">
@@ -59,7 +59,7 @@
             </q-item-section>
           </q-item>
 
-          <q-item clickable v-ripple to="/AboutMe" active-class="link">
+          <q-item clickable v-ripple active-class="link">
             <q-item-section>
               <div style="padding-left: 30px;" class="row">
                 <q-icon style="color:#4CAF50; font-size: 2em;" :name="mdiVuejs">

@@ -117,7 +117,7 @@ export default {
         "retina_detect": true
       })
     }
-    
+
     return {
       initParticles
     }
