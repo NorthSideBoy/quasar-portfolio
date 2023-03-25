@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative;" class="q-pt-md">
 
-    <Particles style="position: absolute; bottom: 0; height: 100vh; width: 80vw;"></Particles>
+    <Particles color="#D7AC3B"></Particles>
 
     <Label name="section" class="q-pl-lg"></Label>
 

@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="particles"></div>
+  <div :id="id" class="particles" style="position: absolute; height: 100%; width: 100%;"></div>
 </template>
 <script>
 import { ref, onMounted } from 'vue'
@@ -136,4 +136,6 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>
