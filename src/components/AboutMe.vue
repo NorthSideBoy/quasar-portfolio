@@ -1,32 +1,41 @@
 <template>
   <div style="position: relative" class="q-pt-md">
+
     <Particles style="position: absolute; bottom: 0; height: 100vh; width: 80vw"></Particles>
-    <div style="font-family: 'fira-medium'" class="q-pl-lg">
-      <span style="color: #a5d6f0"> &lt;section&gt; </span>
-    </div>
+
+    <Label name="section" class="q-pl-lg"></Label>
 
     <div class="q-pt-sm">
-      <div style="font-family: 'fira-medium'" class="q-pl-xl">
-        <span style="color: #a5d6f0"> &lt;h2&gt; </span>
-      </div>
+
+      <Label name="h2" class="q-pl-xl"></Label>
+
       <div style="padding-left: 5vw">
+
         <h2 style="font-family: 'fira-bold'; font-size: calc(30px + 3vw)" class="text-white no-margin no-padding;">
-          <span style="letter-spacing: -0.2rem"> Sobre Mi </span>
+
+          <span style="letter-spacing: -0.2rem">
+            Sobre Mi
+          </span>
+
         </h2>
+
       </div>
-      <div style="font-family: 'fira-medium'" class="q-pl-xl">
-        <span style="color: #a5d6f0"> &lt;/h2&gt;</span>
-      </div>
+
+      <Label name="/h2" class="q-pl-xl"></Label>
+
     </div>
 
     <div class="q-pt-sm">
-      <div style="font-family: 'fira-medium'" class="q-pl-xl">
-        <span style="color: #a5d6f0"> &lt;p&gt; </span>
-      </div>
+
+      <Label name="p" class="q-pl-xl"></Label>
+
       <div style="padding-left: 5vw" class="row">
+
         <div class="col-10 q-pr-xl">
+
           <p style="font-family: 'fira-light'; font-size: calc(8px + 0.5vw); word-wrap: break-word; "
             class="text-white no-margin no-padding">
+
             <span>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since the
@@ -36,13 +45,16 @@
               was popularised in the 1960s with the release of Letraset sheets containing
               Lorem Ipsum passages, and more recently with desktop publishing software
               like Aldus PageMaker including versions of Lorem Ipsum.
+
             </span>
+
           </p>
+
         </div>
+
       </div>
-      <div style="font-family: 'fira-medium'" class="q-pl-xl">
-        <span style="color: #a5d6f0"> &lt;/p&gt; </span>
-      </div>
+
+      <Label name="/p" class="q-pl-xl"></Label>
 
       <div style="padding-left: 5vw;" class="row justify-between q-pt-md">
         <div class="col-5">
@@ -192,17 +204,17 @@
           </div>
         </div>
       </div>
+
     </div>
 
-    <div style="font-family: 'fira-medium'" class="q-pl-lg">
-      <span style="color: #a5d6f0"> &lt;/section&gt; </span>
-    </div>
+    <Label name="/section" class="q-pl-lg"></Label>
   </div>
 </template>
 <script>
 import { ref } from "vue";
 import Particles from "src/components/Particles.vue";
-import { mdiGamepad,  mdiMusic, mdiConsoleLine, mdiMonitorDashboard, mdiCat, mdiAccessPoint, mdiBrain, mdiLinux    } from '@mdi/js';
+import { mdiGamepad, mdiMusic, mdiConsoleLine, mdiMonitorDashboard, mdiCat, mdiAccessPoint, mdiBrain, mdiLinux } from '@mdi/js';
+import Label from "./Label.vue";
 export default {
   setup() {
     return {
@@ -218,6 +230,7 @@ export default {
   },
   components: {
     Particles,
+    Label
   },
 };
 </script>

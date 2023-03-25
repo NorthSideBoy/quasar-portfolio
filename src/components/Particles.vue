@@ -7,13 +7,14 @@ import 'particles.js'
 import uniqid from 'uniqid';
 export default {
   props: {
-    options: {
-      type: Object,
+    color: {
+      type: String,
       required: false,
-      default: { color: "#1D8EF0" }
+      default: "#1D8EF0"
     }
   },
   setup(props) {
+
     const id = ref(uniqid())
 
     onMounted(() => {
@@ -66,7 +67,7 @@ export default {
           "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": props.options.color,
+            "color": props.color,
             "opacity": 0.4,
             "width": 1
           },
@@ -135,10 +136,4 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.particles-js {
-  background: black;
-  height: 100%;
-  width: 100%;
-}
-</style>
+<style lang="scss"></style>
