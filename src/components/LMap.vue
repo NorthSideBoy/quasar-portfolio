@@ -9,9 +9,9 @@ import L from 'leaflet'
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-   iconUrl: require('leaflet/dist/images/marker-icon.png'),
-   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
 
 export default {
@@ -25,6 +25,7 @@ export default {
 
   setup(props) {
     const map = ref(null)
+
     onMounted(() => {
       console.log(props.markers)
       createMapLayer()
@@ -49,7 +50,6 @@ export default {
     }
 
     const setMarkers = () => {
-
       props.markers.map((marker) => {
         return L.marker([marker.latitude, marker.longitude]).addTo(map.value)
           .bindPopup(marker.text)
@@ -64,8 +64,8 @@ export default {
   }
 }
 </script>
-<style>
-.mapContainer {
+<style scoped>
+#mapContainer {
   width: 100%;
   height: 100%;
   border-radius: 5px;

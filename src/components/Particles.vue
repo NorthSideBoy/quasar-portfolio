@@ -1,17 +1,27 @@
 <template>
-    <div id="particles-js" class="particles"></div>
+  <div :id="id" class="particles"></div>
 </template>
 <script>
 import { ref, onMounted } from 'vue'
 import 'particles.js'
+import uniqid from 'uniqid';
 export default {
-  setup() {
+  props: {
+    options: {
+      type: Object,
+      required: false,
+      default: { color: "#1D8EF0" }
+    }
+  },
+  setup(props) {
+    const id = ref(uniqid())
+
     onMounted(() => {
       initParticles()
     })
 
     const initParticles = () => {
-      window.particlesJS("particles-js", {
+      window.particlesJS(id.value, {
         "particles": {
           "number": {
             "value": 50,
@@ -56,7 +66,7 @@ export default {
           "line_linked": {
             "enable": true,
             "distance": 150,
-            "color": "#DE5B18",
+            "color": props.options.color,
             "opacity": 0.4,
             "width": 1
           },
@@ -119,7 +129,8 @@ export default {
     }
 
     return {
-      initParticles
+      initParticles,
+      id
     }
   }
 }

@@ -100,6 +100,7 @@ import LMap from "./LMap.vue"
 import Particles from './Particles.vue'
 
 export default {
+
   setup() {
     const marker = ref([{
       latitude: 8.8875200,

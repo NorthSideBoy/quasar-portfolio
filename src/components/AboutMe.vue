@@ -1,6 +1,6 @@
 <template>
   <div style="position: relative" class="q-pt-md">
-    <ParticlesBlue style="position: absolute; bottom: 0; height: 100vh; width: 80vw"></ParticlesBlue>
+    <Particles style="position: absolute; bottom: 0; height: 100vh; width: 80vw"></Particles>
     <div style="font-family: 'fira-medium'" class="q-pl-lg">
       <span style="color: #a5d6f0"> &lt;section&gt; </span>
     </div>
@@ -201,7 +201,7 @@
 </template>
 <script>
 import { ref } from "vue";
-import ParticlesBlue from "src/components/ParticlesBlue.vue";
+import Particles from "src/components/Particles.vue";
 import { mdiGamepad,  mdiMusic, mdiConsoleLine, mdiMonitorDashboard, mdiCat, mdiAccessPoint, mdiBrain, mdiLinux    } from '@mdi/js';
 export default {
   setup() {
@@ -217,7 +217,7 @@ export default {
     };
   },
   components: {
-    ParticlesBlue,
+    Particles,
   },
 };
 </script>
