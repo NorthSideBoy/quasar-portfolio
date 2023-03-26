@@ -6,7 +6,10 @@
         <Home />
       </section>
       <section>
-        <AboutMeVue />
+        <AboutMe />
+      </section>
+      <section>
+        <Skills />
       </section>
       <section>
         <Contact />
@@ -18,7 +21,8 @@
 <script>
 import { ref, onMounted } from "vue";
 import Home from "src/components/Home.vue";
-import AboutMeVue from "src/components/AboutMe.vue";
+import AboutMe from "src/components/AboutMe.vue";
+import Skills from "src/components/Skills.vue";
 import Contact from "src/components/Contact.vue";
 import Label from "src/components/Label.vue";
 
@@ -29,9 +33,10 @@ export default {
   },
   components: {
     Home,
-    AboutMeVue,
+    AboutMe,
     Contact,
-    Label
+    Label,
+    Skills
   },
 };
 </script>

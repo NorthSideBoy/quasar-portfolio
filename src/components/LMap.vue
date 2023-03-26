@@ -30,10 +30,9 @@ export default {
     })
 
     onBeforeMount(() => {
-      console.log(map.value)
-      // if (map.value) {
-      //   map.value.remove()
-      // }
+      if (map.value) {
+        map.value.remove()
+      }
     })
 
     const createMapLayer = () => {
