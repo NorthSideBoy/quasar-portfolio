@@ -136,7 +136,7 @@
             @northsideboy - saidlucena519@gmail.com
           </q-item-label>
           <q-item-label class="q-mt-xs text-uppercase" style="font-family:'fira-bold'; color:#58A6FF">
-            <span class="cursor-pointer">Open in GitHub</span>
+            <span class="cursor-pointer" @click="(e) => toGithub(e)" >Open in GitHub</span>
             <q-icon class="q-pl-sm" style="color: white;" size="sm" name="fi-brands-github"></q-icon>
           </q-item-label>
         </q-item-section>
@@ -175,11 +175,15 @@ export default {
     const expandFolder = () => {
       folder.value = !folder.value
     }
+    const toGithub = (e) => {
+      window.location.href = "https://github.com/NorthSideBoy/quasar-portfolio"
+    }
     return {
       drawer,
       folder,
       toggleDrawer,
       expandFolder,
+      toGithub,
       mdiFolder,
       mdiChevronRight,
       mdiXml,

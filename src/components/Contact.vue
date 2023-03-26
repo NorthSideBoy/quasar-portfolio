@@ -46,7 +46,7 @@
 
         <div class="q-pt-sm">
           <Label name="q-form" class="q-pl-xl"></Label>
-          <div style="padding-left: 5vw" class="q-pt-sm">
+          <div style="padding-left: 5vw" class="q-pt-lg">
             <q-form @submit="onSubmit" @reset="onReset">
               <div class="row justify-center">
                 <q-input standout="bg-black input-title" input-class="text-white input-content" outlined v-model="name"
@@ -58,7 +58,7 @@
                 <q-input standout="bg-black input-title" input-class="text-white input-content" outlined v-model="message"
                   type="textarea" label="Email" class="col-12 q-pt-md input-title" bg-color="secondary" />
               </div>
-              <div class="q-pt-xl" style="position: relative; overflow: auto; height: 100px;">
+              <div class="q-pt-lg" style="position: relative; overflow: auto; height: 75px;">
                 <q-btn class="q-pl-lg q-pr-lg" flat label="Enviar"
                   style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 3px; position: absolute; right: 0;"
                   size="lg">
