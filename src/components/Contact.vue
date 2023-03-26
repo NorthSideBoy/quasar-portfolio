@@ -102,10 +102,10 @@ export default {
       El Tigre 6050, Anzoátegui, Venezuela`
     }])
     const getClient = () => {
-      fetch('http://ip-api.com/json/')
+      fetch('https://api.ipify.org?format=json')
         .then(response => response.json())
         .then(response => {
-          const publicIp = response
+          const publicIp = response.ip
           console.log(publicIp)
           markers.value.push({
             latitude: publicIp.lat,
@@ -114,13 +114,13 @@ export default {
             <hr>
             ${publicIp.city}, ${publicIp.country}`
           })
-          isGetClient.value = true
+          // isGetClient.value = true
         })
         .catch((err) => {
           console.log(err)
         });
     }
-    const isGetClient = ref(false)
+    const isGetClient = ref(true)
     const name = ref(null)
     const email = ref(null)
     const affair = ref(null)
