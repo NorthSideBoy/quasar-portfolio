@@ -30,6 +30,7 @@ export default {
     })
 
     onBeforeMount(() => {
+      L.marker().openPopup()
       if (map.value) {
         map.value.remove()
       }
@@ -49,8 +50,22 @@ export default {
 
     const setMarkers = () => {
       props.markers.map((marker) => {
-        return L.marker([marker.latitude, marker.longitude]).addTo(map.value)
-          .bindPopup(marker.text)
+        return (() => {
+          L.marker([marker.latitude, marker.longitude], {
+            title: "Hello!"
+          }).addTo(map.value).bindPopup(marker.text).openPopup()
+
+          L.circle([marker.latitude, marker.longitude], {
+            color: '#010409',
+            fillColor: '#58A6FF',
+            weight: 0,
+            opacity:0.2,
+            fillOpacity: 0.3,
+            radius: 150000
+          }).addTo(map.value);
+
+          return true
+        })()
       })
     }
 
@@ -71,6 +86,7 @@ export default {
   border-radius: 5px;
   filter: saturate(200%) contrast(103%)
 }
+
 /* popup message */
 
 .leaflet-container {
