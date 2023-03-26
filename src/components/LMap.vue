@@ -9,7 +9,7 @@ import L from 'leaflet'
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconRetinaUrl: require('leaflet/dist/images/map-marker.svg'),
   iconUrl: require('leaflet/dist/images/map-marker.svg'),
   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 });
@@ -70,9 +70,8 @@ export default {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  filter: saturate(200%) contrast(103%);
+  filter: saturate(200%) contrast(103%)
 }
-
 /* popup message */
 
 .leaflet-container {

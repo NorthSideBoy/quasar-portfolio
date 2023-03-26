@@ -17,7 +17,7 @@
           <span style="letter-spacing: -0.2rem;">
             Hola, <br>
             Soy Said Lucena, <br>
-            Desarrollador Web
+            Desarrollador
           </span>
 
         </h1>

@@ -50,15 +50,15 @@
             <q-form @submit="onSubmit" @reset="onReset">
               <div class="row justify-center">
                 <q-input standout="bg-black input-title" input-class="text-white input-content" outlined v-model="name"
-                  label="Nombre" class="text-color col-6 q-pr-md input-title" bg-color="secondary" />
+                  label="Nombre *" class="text-color col-6 q-pr-md input-title" bg-color="secondary" />
                 <q-input standout="bg-black input-title" input-class="text-white input-content" outlined v-model="email"
-                  label="Email" class="col-6 input-title" bg-color="secondary" />
+                  label="Email *" class="col-6 input-title" bg-color="secondary" />
                 <q-input standout="bg-black input-title" input-class="text-white input-content" outlined v-model="affair"
-                  label="Asunto" class="col-12 q-pt-md input-title" bg-color="secondary" />
+                  label="Asunto *" class="col-12 q-pt-md input-title" bg-color="secondary" />
                 <q-input standout="bg-black input-title" input-class="text-white input-content" outlined v-model="message"
-                  type="textarea" label="Email" class="col-12 q-pt-md input-title" bg-color="secondary" />
+                  type="textarea" label="Mensaje *" class="col-12 q-pt-md input-title" bg-color="secondary" />
               </div>
-              <div class="q-pt-lg" style="position: relative; overflow: auto; height: 75px;">
+              <div class="q-pt-lg" style="position: relative; overflow: auto; height: 80px;">
                 <q-btn class="q-pl-lg q-pr-lg" flat label="Enviar"
                   style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 3px; position: absolute; right: 0;"
                   size="lg">
@@ -73,7 +73,7 @@
 
       <div class="col-6 q-pa-xl">
 
-        <l-map :markers="marker" class="shadow-10"></l-map>
+        <l-map v-if="isGetClient" :markers="markers" class="shadow-10"></l-map>
 
       </div>
 
@@ -84,19 +84,43 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import LMap from "./LMap.vue"
 import Particles from './Particles.vue'
 import Label from './Label.vue'
 
 export default {
-
   setup() {
-    const marker = ref([{
+    onMounted(() => {
+      getClient()
+    })
+    const markers = ref([{
       latitude: 8.8875200,
       longitude: -64.2454400,
-      text: "El Tigre 6050, Anzoátegui, Venezuela"
+      text: `I'm here <br>
+      <hr>
+      El Tigre 6050, Anzoátegui, Venezuela`
     }])
+    const getClient = () => {
+      fetch('http://ip-api.com/json/')
+        .then(response => response.json())
+        .then(response => {
+          const publicIp = response
+          console.log(publicIp)
+          markers.value.push({
+            latitude: publicIp.lat,
+            longitude: publicIp.lon,
+            text: `Are you here ;) <br>
+            <hr>
+            ${publicIp.city}, ${publicIp.country}`
+          })
+          isGetClient.value = true
+        })
+        .catch((err) => {
+          console.log(err)
+        });
+    }
+    const isGetClient = ref(false)
     const name = ref(null)
     const email = ref(null)
     const affair = ref(null)
@@ -106,7 +130,9 @@ export default {
       email,
       affair,
       message,
-      marker
+      getClient,
+      isGetClient,
+      markers
     }
   },
   components: {
