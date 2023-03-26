@@ -96,7 +96,7 @@ export default {
 /* zoom panel */
 .leaflet-bar a {
   background-color: #010409;
-  /* border-bottom: 1px solid #ccc; */
+  border-bottom: 1px solid #010409;
   width: 26px;
   height: 26px;
   line-height: 26px;
@@ -113,7 +113,7 @@ export default {
 
 .leaflet-touch .leaflet-control-layers,
 .leaflet-touch .leaflet-bar {
-  border: 1px solid #58A6FF;
+  /* border: 1px solid #58A6FF; */
   background-clip: padding-box;
   border-radius: 5px;
 }
