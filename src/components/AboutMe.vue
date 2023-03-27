@@ -1,10 +1,7 @@
 <template>
   <div style="position: relative" class="q-pt-md">
-
     <Particles></Particles>
-
     <Label name="section" class="q-pl-lg"></Label>
-
     <div class="q-pt-sm">
 
       <Label name="h2" class="q-pl-xl"></Label>
@@ -24,18 +21,12 @@
       <Label name="/h2" class="q-pl-xl"></Label>
 
     </div>
-
     <div class="q-pt-sm">
-
       <Label name="p" class="q-pl-xl"></Label>
-
       <div style="padding-left: 5vw" class="row">
-
         <div class="col-10 q-pr-xl">
-
           <p style="font-family: 'fira-light'; font-size: calc(8px + 0.5vw); word-wrap: break-word; "
             class="text-white no-margin no-padding">
-
             <span>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since the
@@ -47,15 +38,10 @@
               like Aldus PageMaker including versions of Lorem Ipsum.
 
             </span>
-
           </p>
-
         </div>
-
       </div>
-
       <Label name="/p" class="q-pl-xl"></Label>
-
       <div style="padding-left: 5vw;" class="row justify-between q-pt-md">
         <div class="col-5">
           <h3 style="font-family: 'fira-bold'; font-size: calc(25px + 1vw)" class="text-white no-margin no-padding">
@@ -122,7 +108,7 @@
 
           <div class="row justify-start q-pt-md" style="gap:15px;">
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiGamepad" size="xl" color="white">
                 </q-icon>
@@ -132,7 +118,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiMusic" size="xl" color="white">
                 </q-icon>
@@ -142,7 +128,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiConsoleLine" size="xl" color="white">
                 </q-icon>
@@ -152,7 +138,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiMonitorDashboard" size="xl" color="white">
                 </q-icon>
@@ -162,7 +148,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiCat" size="xl" color="white">
                 </q-icon>
@@ -172,7 +158,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiAccessPoint" size="xl" color="white">
                 </q-icon>
@@ -182,7 +168,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiBrain" size="xl" color="white">
                 </q-icon>
@@ -192,7 +178,7 @@
               </div>
             </div>
             <div class="column justify-center"
-              style="background: #010409; border-radius: 10px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
+              style="background: #010409; border-radius: 5px; flex-basis: calc(100% / 4); height: 50%; min-height: 100px ; min-width: 100px; max-height: 100px; max-width: 100px;">
               <div class="justify-center row q-pa-sm">
                 <q-icon :name="mdiLinux" size="xl" color="white">
                 </q-icon>
@@ -204,7 +190,6 @@
           </div>
         </div>
       </div>
-
     </div>
 
     <Label name="/section" class="q-pl-lg"></Label>

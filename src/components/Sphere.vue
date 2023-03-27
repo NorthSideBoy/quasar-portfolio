@@ -16,7 +16,7 @@ export default {
       'npm',
       'Git',
       'Html',
-      'Css',
+      'CSS',
       'CronJob',
       '_lodash',
       'Firebird',
