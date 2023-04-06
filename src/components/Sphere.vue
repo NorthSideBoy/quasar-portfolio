@@ -1,6 +1,5 @@
 <template>
-  <div class="full-height full-width row justify-center tagcloud " @click="(e) => selectItem(e)" ref="sphere">
-  </div>
+  <div class="full-height full-width row justify-center tagcloud" @click="(e) => selectItem(e)" ref="sphere" />
 </template>
 <script>
 import { ref, onMounted } from 'vue'
@@ -10,24 +9,26 @@ export default {
     const sphere = ref(null)
     const container = ref('.tagcloud')
     const texts = ref([
-      'NodeJs',
+      'Node JS',
       'Javascript',
       'C#',
       'npm',
       'Git',
-      'Html',
+      'HTML',
       'CSS',
       'CronJob',
       '_lodash',
       'Firebird',
-      'MySql',
+      'MySQL',
       'Express',
-      'GraphQl',
+      'GraphQL',
+      'REST',
       'MongoDB',
-      'Sql',
-      'NoSql',
-      'QuasarJs',
-      'VueJs',
+      'SQL',
+      'C++',
+      'NoSQL',
+      'Quasar JS',
+      'Vue JS',
       'Linux',
       'Moment'
     ])

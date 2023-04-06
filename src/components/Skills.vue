@@ -1,63 +1,58 @@
 <template>
-  <div style="position: relative;" class="q-pt-md">
+  <div style="position: relative;">
     <Particles color="#D7AC3B"></Particles>
-    <Label name="section" class="q-pl-lg"></Label>
-    <div class="row">
-      <div class="col-6 column justify-center">
-        <div class="q-pt-sm">
-          <Label name="h2" class="q-pl-xl"></Label>
-          <div style="padding-left: 5vw;">
-            <h2 style="font-family: 'fira-bold'; font-size: calc(25px + 3vw);" class="text-white no-margin no-padding;">
-              <span style="letter-spacing: -0.2rem;">
-                Habilidades
-              </span>
-            </h2>
+    <Tab label="section" :level="3" class="q-pt-md ">
+      <template v-slot:body>
+        <div>
+          <Tab label="h2" :level="3">
+            <template v-slot:body>
+              <div style="font-family: 'fira-bold'; font-size: calc(25px + 3vw); line-height: 100%;" class="text-white">
+                <span>
+                  Habilidades
+                </span>
+              </div>
+            </template>
+          </Tab>
+          <div class="row justify-center">
+            <Tab class="q-pt-md q-pb-md col-12 col-sm-6" label="p" :level="3">
+              <template v-slot:body>
+                <div style="font-family: 'fira-light'; font-size: calc(12px + 0.5vw); word-wrap: break-word;"
+                  class="col-12 col-sm-6 text-white q-pr-xl">
+                  <span>
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+                    took
+                    a galley of type and scrambled it to make a type specimen book. It has survived not only five
+                    centuries,
+                    but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
+                    the
+                    1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </span>
+                </div>
+              </template>
+            </Tab>
+            <div class="col-12 col-sm-6" style="padding-right: 48px;">
+              <Sphere />
+            </div>
           </div>
-          <Label name="/h2" class="q-pl-xl"></Label>
         </div>
-        <div class="q-pt-sm">
-          <Label name="p" class="q-pl-xl"></Label>
-          <div style="padding-left: 5vw">
-            <p style="font-family: 'fira-light'; font-size: calc(8px + 0.5vw); word-wrap: break-word; "
-              class="text-white no-margin no-padding">
-              <span>
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
-                a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
-                1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-              </span>
-            </p>
-          </div>
-          <Label name="/p" class="q-pl-xl"></Label>
-        </div>
-      </div>
-      <div class="col-6 q-pa-lg">
-        <Sphere></Sphere>
-      </div>
-    </div>
-    <Label name="/section" class="q-pl-lg q-pt-md"></Label>
+      </template>
+    </Tab>
   </div>
 </template>
 <script>
-import { ref, onMounted } from 'vue'
-import Label from "src/components/Label.vue";
+import Tab from './Tab.vue';
 import Sphere from './Sphere.vue';
 import Particles from './Particles.vue';
 export default {
-  setup() {
-
-    onMounted(() => {
-    })
-
-    return {
-    }
-  },
   components: {
-    Label,
+    Tab,
     Sphere,
     Particles
   }
 }
 </script>
 <style lang="scss"></style>
+
+

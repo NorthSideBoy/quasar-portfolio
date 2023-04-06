@@ -14,7 +14,7 @@ export default {
       required: false,
       default: ""
     },
-    color:{
+    color: {
       type: String,
       required: false,
       default: "#A5D6F0"

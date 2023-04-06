@@ -59,7 +59,7 @@ export default {
             color: '#010409',
             fillColor: '#58A6FF',
             weight: 0,
-            opacity:0.2,
+            opacity: 0.2,
             fillOpacity: 0.3,
             radius: 150000
           }).addTo(map.value);

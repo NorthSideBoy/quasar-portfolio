@@ -1,84 +1,59 @@
 <template>
-  <div style="position: relative;" class="q-pt-md">
-
-    <Particles color="#D7AC3B"></Particles>
-
-    <Label name="section" class="q-pl-lg"></Label>
-
-    <div class="q-pt-sm">
-
-      <Label name="h1" class="q-pl-xl"></Label>
-
-      <div style="padding-left: 5vw;" class="animate__animated animate__fadeInLeft"
-        @animationend="(e) => displaySubtitle(e, 'animate__fadeInLeft')">
-
-        <h1 style="font-family: 'fira-bold'; font-size: calc(30px + 3vw);" class="text-white no-margin no-padding;">
-
-          <span style="letter-spacing: -0.2rem;">
-            Hola, <br>
-            Soy Said Lucena, <br>
-            Desarrollador
-          </span>
-
-        </h1>
-
-      </div>
-
-      <Label name="/h1" class="q-pl-xl"></Label>
-
-    </div>
-
-    <div class="q-pt-sm">
-
-      <Label name="p" class="q-pl-xl"></Label>
-
-      <div style="padding-left: 5vw;" v-if="subtitle" class="animate__animated animate__fadeIn">
-
-        <p style="font-family: 'fira-bold'; font-size: calc(2px + 2vw);" class="text-grey no-margin no-padding;">
-
-          <span>
-            Back End - Front End Developer
-          </span>
-
-        </p>
-
-      </div>
-
-      <div v-else>
-        <p style="font-family: 'fira-bold'; font-size: calc(2px + 2vw);" class="no-margin no-padding;">
-          <span>
-            &nbsp;
-          </span>
-        </p>
-      </div>
-
-      <Label name="/p" class="q-pl-xl"></Label>
-
-    </div>
-
-    <div style="padding-left: 5vw;" class="q-pt-lg q-pb-lg">
-
-      <q-btn class="q-pl-lg q-pr-lg animate__animated animate__headShake animate__delay-1s" flat label="CONTACTAME"
-        v-if="contact"
-        style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 0px 0px 0px 0px;"
-        size="lg">
-      </q-btn>
-
-      <q-btn class="q-pl-lg q-pr-lg" flat label="CONTACTAME" v-else
-        style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 0px 0px 0px 0px;"
-        size="lg">
-      </q-btn>
-
-    </div>
-
-    <Label name="/section" class="q-pl-lg"></Label>
-
+  <div style="position:relative">
+    <Particles color="#D7AC3B" />
+    <Tab label="section" :level="3">
+      <template v-slot:body>
+        <div>
+          <Tab label="h1" :level="3">
+            <template v-slot:body>
+              <div @animationend="(e) => displaySubtitle(e, 'animate__fadeInLeft')"
+                style="font-family: 'fira-bold'; font-size: calc(28px + 3vw); line-height: 100%; word-wrap: break-word; height: 100%;"
+                class="text-white animate__animated animate__fadeInLeft">
+                <span>
+                  Hola, <br>
+                  Soy Said Lucena, <br>
+                  Desarrollador
+                </span>
+              </div>
+            </template>
+          </Tab>
+          <Tab class="q-pt-md" label="p" :level="3">
+            <template v-slot:body>
+              <div v-if="subtitle" class="animate__animated animate__fadeIn text-grey"
+                style="font-family: 'fira-bold'; font-size: calc(15px + 2vw);">
+                <span>
+                  Back End - Front End Developer
+                </span>
+              </div>
+              <div v-else style="font-family: 'fira-bold'; font-size: calc(15px + 2vw);">
+                <span>
+                  &nbsp;<br>
+                  {{ $q.screen.width <= 600 ? '&nbsp;' : '' }} </span>
+              </div>
+            </template>
+          </Tab>
+          <Tab class="q-pt-md q-pb-md" label="q-btn" :level="3">
+            <template v-slot:body>
+              <q-btn class="q-pl-lg q-pr-lg animate__animated animate__headShake animate__delay-1s" flat
+                label="CONTACTAME" v-if="contact"
+                style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 0px 0px 0px 0px;"
+                size="lg">
+              </q-btn>
+              <q-btn class="q-pl-lg q-pr-lg" flat label="CONTACTAME" v-else
+                style="font-family: 'fira-light'; color: #1D8EF0; border: 1px solid #1D8EF0; border-radius: 0px 0px 0px 0px;"
+                size="lg">
+              </q-btn>
+            </template>
+          </Tab>
+        </div>
+      </template>
+    </Tab>
   </div>
 </template>
 <script>
 import { ref } from 'vue'
-import Particles from 'src/components/Particles.vue';
-import Label from './Label.vue'
+import Tab from './Tab.vue'
+import Particles from './Particles.vue'
 export default {
   setup() {
     const contact = ref(false)
@@ -96,13 +71,9 @@ export default {
     }
   },
   components: {
-    Particles,
-    Label
+    Tab,
+    Particles
   }
 }
 </script>
-<style lang="scss">
-h1 {
-  line-height: 4.5rem;
-}
-</style>
+<style lang="scss"></style>
