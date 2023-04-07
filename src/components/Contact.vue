@@ -28,7 +28,7 @@
                 </div>
               </template>
             </Tab>
-            <Tab class="q-pt-md" label="q-form" :level="3">
+            <Tab class="q-pt-md q-pb-md" label="q-form" :level="3">
               <template v-slot:body>
                 <div class="q-pr-lg">
                   <q-form @submit="onSubmit" @reset="onReset">
@@ -123,9 +123,6 @@ export default {
 }
 </script>
 <style lang="scss">
-h2 {
-  line-height: 4.5rem;
-}
 
 .input-title {
   font-family: 'fira-bold';

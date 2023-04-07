@@ -66,7 +66,7 @@ export default {
           },
           "line_linked": {
             "enable": true,
-            "distance": 150,
+            "distance": 100,
             "color": props.color,
             "opacity": 0.4,
             "width": 1
@@ -136,4 +136,6 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>

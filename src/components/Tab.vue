@@ -1,9 +1,12 @@
 <template>
   <div ref="tab" :class="classes">
-    <div>
+    <div class="row justify-start">
       <span>
         &lt;{{ label }}&gt;
       </span>
+      <div class="q-pl-xs">
+        <slot name="after" />
+      </div>
     </div>
     <div class="q-pt-sm q-pb-sm q-pl-sm full-width">
       <slot name="body"></slot>

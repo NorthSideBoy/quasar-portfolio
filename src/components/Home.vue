@@ -2,6 +2,9 @@
   <div style="position:relative">
     <Particles color="#D7AC3B" />
     <Tab label="section" :level="3">
+      <template v-slot:after>
+        <ParticlesEditor></ParticlesEditor>
+      </template>
       <template v-slot:body>
         <div>
           <Tab label="h1" :level="3">
@@ -54,6 +57,7 @@
 import { ref } from 'vue'
 import Tab from './Tab.vue'
 import Particles from './Particles.vue'
+import ParticlesEditor from './ParticlesEditor.vue';
 export default {
   setup() {
     const contact = ref(false)
@@ -67,12 +71,13 @@ export default {
     return {
       contact,
       subtitle,
-      displaySubtitle
+      displaySubtitle,
     }
   },
   components: {
     Tab,
-    Particles
+    Particles,
+    ParticlesEditor
   }
 }
 </script>
