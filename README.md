@@ -1,4 +1,4 @@
-# Quasar App (quasar-portfolio)
+# Said Lucena || Portfolio (quasar-portfolio)
 
 A Personal Quasar Portfolio
 

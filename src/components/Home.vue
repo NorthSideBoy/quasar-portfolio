@@ -1,10 +1,6 @@
 <template>
-  <div style="position:relative">
-    <Particles color="#D7AC3B" />
+  <div>
     <Tab label="section" :level="3">
-      <template v-slot:after>
-        <ParticlesEditor></ParticlesEditor>
-      </template>
       <template v-slot:body>
         <div>
           <Tab label="h1" :level="3">
@@ -68,6 +64,7 @@ export default {
       subtitle.value = !subtitle.value
       contact.value = true
     }
+
     return {
       contact,
       subtitle,

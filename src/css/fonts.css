@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'fira-medium';
-  src: url('../assets/fonts/fira-medium.otf');
+  src: url('src/assets/fonts/fira-medium.otf');
 }
 
 @font-face {

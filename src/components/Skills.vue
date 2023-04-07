@@ -1,6 +1,5 @@
 <template>
-  <div style="position: relative;">
-    <Particles color="#D7AC3B"></Particles>
+  <div>
     <Tab label="section" :level="3" class="q-pt-md ">
       <template v-slot:body>
         <div>

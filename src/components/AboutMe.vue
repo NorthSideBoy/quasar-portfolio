@@ -1,6 +1,5 @@
 <template>
-  <div style="position:relative">
-    <Particles />
+  <div>
     <Tab class="q-pt-md" label="section" :level="3">
       <template v-slot:body>
         <div>
@@ -78,7 +77,6 @@
 </template>
 <script>
 import { ref } from "vue";
-import Particles from "./Particles.vue";
 import {
   mdiGamepad,
   mdiMusic,
@@ -125,8 +123,7 @@ export default {
     };
   },
   components: {
-    Tab,
-    Particles
+    Tab
   }
 };
 </script>

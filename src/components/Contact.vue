@@ -1,6 +1,5 @@
 <template>
-  <div style="position: relative;">
-    <Particles></Particles>
+  <div>
     <Tab class="q-pt-md q-pb-md" label="section" :level="3">
       <template v-slot:body>
         <div class="row">
@@ -66,7 +65,6 @@
 <script>
 import { ref, onMounted } from 'vue'
 import LMap from "./LMap.vue"
-import Particles from './Particles.vue'
 import Tab from './Tab.vue'
 
 export default {
@@ -117,7 +115,6 @@ export default {
   },
   components: {
     LMap,
-    Particles,
     Tab
   }
 }

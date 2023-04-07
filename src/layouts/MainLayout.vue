@@ -149,7 +149,7 @@ export default {
   }
 }
 </script>
-<style>
+<style >
 @import "~@flaticon/flaticon-uicons/css/all/all";
 @import 'animate.css';
 
