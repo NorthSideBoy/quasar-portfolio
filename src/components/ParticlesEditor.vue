@@ -231,17 +231,18 @@
   </q-btn>
 </template>
 <script>
-import { ref, watch, defineEmits } from 'vue'
+import { ref} from 'vue'
 import { mdiVectorLine } from '@mdi/js';
+import { useDataStore } from 'src/stores/data-store';
 export default {
   props: {
     options: {
       type: Object,
-      required: true
+      required: true,
+      default: useDataStore().options
     }
   },
   setup(props, { emit }) {
-    const update = defineEmits(['update']);
     const tab = ref("general")
     const directions = ref(["none", "top", "top-right", "right", "bottom-right", "bottom", "bottom-left", "left", "top-left"])
     const hoverModes = ref(["grab", "repulse"])
@@ -249,15 +250,12 @@ export default {
     const types = ref(["circle", "edge", "triangle", "polygon", "star"])
     const edit = ref(false)
 
-    const options = ref(props.options)
-
     const displayEdit = (e) => {
       edit.value = !edit.value
     }
 
-    watch(options.value, (newValue, oldValue) => {
-      emit('update', newValue)
-    })
+    const options = ref(props.options)
+
     return {
       directions,
       edit,
@@ -267,7 +265,6 @@ export default {
       clickModes,
       options,
       types,
-      update,
       displayEdit
     }
   }

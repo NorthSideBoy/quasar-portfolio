@@ -1,26 +1,29 @@
 <template>
   <q-page style="background: #0d1117;">
-    <q-scroll-area style="height: calc(100vh - 65px); max-width: 100vw;">
+
+    <q-scroll-area style="height: calc(100vh - 65px); max-width: 100vw; position: relative;">
+
       <Tab class="q-pt-md q-pb-md" label="template" :level="3">
         <template v-slot:after>
-          <ParticlesEditor v-if="particles" :options="particles" @update="(e) => options = e" />
+          <ParticlesEditor :options="options" v-if="options" />
         </template>
         <template v-slot:body>
-          <div style="max-width: 94vw; position: relative;">
-            <Particles @particlesMounted="(e) => particles = e" v-if="options" :options="options" />
-            <Particles @particlesMounted="(e) => particles = e" v-else />
-            <section>
-              <Home />
-            </section>
-            <section>
-              <AboutMe />
-            </section>
-            <section>
-              <Skills />
-            </section>
-            <section>
-              <Contact />
-            </section>
+          <Particles :options="options" v-if="options" />
+          <div style="max-width: 94vw;">
+            <div>
+              <section>
+                <Home />
+              </section>
+              <section>
+                <AboutMe />
+              </section>
+              <section>
+                <Skills />
+              </section>
+              <section>
+                <Contact />
+              </section>
+            </div>
           </div>
         </template>
       </Tab>
@@ -29,7 +32,7 @@
 </template>
 <script>
 
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import Tab from "src/components/Tab.vue";
 import Home from "src/components/Home.vue";
 import AboutMe from "src/components/AboutMe.vue";
@@ -43,11 +46,15 @@ export default {
 
   setup() {
     const options = ref(null)
-    const dataStore = useDataStore()
-    const particles = ref(null)
+    const dataStore = ref(useDataStore())
+    onMounted(() => {
+      window.addEventListener("load", () => {
+        options.value = dataStore.value.options
+      })
+    })
     return {
       options,
-      particles
+      dataStore
     }
   },
   components: {
