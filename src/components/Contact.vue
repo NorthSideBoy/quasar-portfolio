@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="position: relative;">
+    <Particles :options="options" v-if="options" />
     <Tab class="q-pt-md q-pb-md" label="section" :level="3">
       <template v-slot:body>
         <div class="row">
@@ -66,11 +67,16 @@
 import { ref, onMounted } from 'vue'
 import LMap from "./LMap.vue"
 import Tab from './Tab.vue'
+import { useDataStore } from 'src/stores/data-store'
+import Particles from './Particles.vue'
 
 export default {
   setup() {
     onMounted(() => {
       getClient()
+      window.addEventListener("load", () => {
+        options.value = dataStore.value.options
+      })
     })
     const markers = ref([{
       latitude: 8.8875200,
@@ -98,6 +104,9 @@ export default {
           console.log(err)
         });
     }
+
+    const dataStore = ref(useDataStore())
+    const options = ref(null)
     const isGetClient = ref(true)
     const name = ref(null)
     const email = ref(null)
@@ -108,19 +117,21 @@ export default {
       email,
       affair,
       message,
-      getClient,
       isGetClient,
-      markers
+      markers,
+      dataStore,
+      options,
+      getClient
     }
   },
   components: {
     LMap,
-    Tab
+    Tab,
+    Particles
   }
 }
 </script>
 <style lang="scss">
-
 .input-title {
   font-family: 'fira-bold';
   color: #1D8EF0;

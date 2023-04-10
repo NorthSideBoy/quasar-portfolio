@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="position: relative;">
+    <Particles :options="options" v-if="options" />
     <Tab class="q-pt-md" label="section" :level="3">
       <template v-slot:body>
         <div>
@@ -76,7 +77,7 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import {
   mdiGamepad,
   mdiMusic,
@@ -88,6 +89,8 @@ import {
   mdiLinux
 } from '@mdi/js';
 import Tab from "./Tab.vue";
+import Particles from "./Particles.vue";
+import { useDataStore } from "src/stores/data-store";
 export default {
   setup() {
     const interests = ref([
@@ -109,6 +112,15 @@ export default {
       { name: "Cargo", label: "Junior Developer" }
     ])
 
+    const dataStore = ref(useDataStore())
+    const options = ref(null)
+
+    onMounted(() => {
+      window.addEventListener("load", () => {
+        options.value = dataStore.value.options
+      })
+    })
+
     return {
       mdiGamepad,
       mdiMusic,
@@ -119,11 +131,14 @@ export default {
       mdiBrain,
       mdiLinux,
       interests,
-      rows
+      rows,
+      options,
+      dataStore
     };
   },
   components: {
-    Tab
+    Tab,
+    Particles
   }
 };
 </script>

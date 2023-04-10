@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="position: relative;">
+    <Particles :options="options" v-if="options" />
     <Tab label="section" :level="3">
       <template v-slot:body>
         <div>
@@ -50,25 +51,35 @@
   </div>
 </template>
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import Tab from './Tab.vue'
 import Particles from './Particles.vue'
 import ParticlesEditor from './ParticlesEditor.vue';
+import { useDataStore } from 'src/stores/data-store';
 export default {
   setup() {
     const contact = ref(false)
     const subtitle = ref(false)
+    const dataStore = ref(useDataStore())
+    const options = ref(null)
     const displaySubtitle = (e, animation) => {
       const prefix = "animated__"
       e.target.classList.remove(`${prefix}animated`, animation);
       subtitle.value = !subtitle.value
       contact.value = true
     }
+    onMounted(() => {
+      window.addEventListener("load", () => {
+        options.value = dataStore.value.options
+      })
+    })
 
     return {
       contact,
       subtitle,
-      displaySubtitle,
+      dataStore,
+      options,
+      displaySubtitle
     }
   },
   components: {

@@ -8,7 +8,6 @@
           <ParticlesEditor :options="options" v-if="options" />
         </template>
         <template v-slot:body>
-          <Particles :options="options" v-if="options" />
           <div style="max-width: 94vw;">
             <div>
               <section>
@@ -38,7 +37,6 @@ import Home from "src/components/Home.vue";
 import AboutMe from "src/components/AboutMe.vue";
 import Skills from "src/components/Skills.vue";
 import Contact from "src/components/Contact.vue";
-import Particles from "src/components/Particles.vue";
 import ParticlesEditor from "src/components/ParticlesEditor.vue";
 import { useDataStore } from "src/stores/data-store.js";
 
@@ -63,7 +61,6 @@ export default {
     AboutMe,
     Skills,
     Contact,
-    Particles,
     ParticlesEditor
   },
 };

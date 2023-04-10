@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div style="position:relative">
+    <Particles :options="options" v-if="options" />
     <Tab label="section" :level="3" class="q-pt-md ">
       <template v-slot:body>
         <div>
@@ -44,7 +45,23 @@
 import Tab from './Tab.vue';
 import Sphere from './Sphere.vue';
 import Particles from './Particles.vue';
+import { ref, onMounted } from 'vue';
+import { useDataStore } from 'src/stores/data-store';
+
 export default {
+  setup() {
+    const dataStore = ref(useDataStore())
+    const options = ref(null)
+    onMounted(() => {
+      window.addEventListener("load", () => {
+        options.value = dataStore.value.options
+      })
+    })
+    return {
+      dataStore,
+      options
+    }
+  },
   components: {
     Tab,
     Sphere,

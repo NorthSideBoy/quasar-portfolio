@@ -10,17 +10,23 @@ export default {
   props: {
     options: {
       type: Object,
-      required: true
+      required: false
+    },
+    color: {
+      type: String,
+      required: false,
+      default: "#1D8EF0"
     }
   },
   setup(props, { emit }) {
+    const cache = ref(null)
 
     const id = ref(uniqid())
 
     const options = ref()
 
-    const initParticles = () => {
-      window.particlesJS(id.value, {
+    const initParticles = async () => {
+      await window.particlesJS(id.value, {
         "particles": {
           "number": {
             "value": props.options.general.quantity,
@@ -127,16 +133,20 @@ export default {
       })
     }
 
-    onMounted(() => {
-      initParticles()
+    onMounted(async () => {
+      await initParticles()
     })
 
     watch(props.options, async (newValue) => {
-      initParticles()
+      cache.value = window.particlesJS
+      delete await window.particlesJS
+      window["particlesJS"] = await cache.value
+      await initParticles()
     })
     return {
       id,
       options,
+      cache,
       initParticles
     }
   }
