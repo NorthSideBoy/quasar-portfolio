@@ -1,5 +1,5 @@
 <template>
-  <div :id="id" class="particles" style="position: absolute; height: 100%; width: 100%;"></div>
+  <div :id="id" ref="particles" class="particles" style="position: absolute; height: 100%; width: 100%;"></div>
 </template>
 <script>
 import { ref, onMounted, watch } from 'vue'
@@ -19,11 +19,12 @@ export default {
     }
   },
   setup(props, { emit }) {
+
     const cache = ref(null)
 
-    const id = ref(uniqid())
+    const particles = ref(null)
 
-    const options = ref()
+    const id = ref(uniqid())
 
     const initParticles = async () => {
       await window.particlesJS(id.value, {
@@ -133,22 +134,33 @@ export default {
       })
     }
 
-    onMounted(async () => {
-      await initParticles()
-    })
-
-    watch(props.options, async (newValue) => {
+    const reloadParticles = async () => {
       cache.value = window.particlesJS
       delete await window.particlesJS
       window["particlesJS"] = await cache.value
       await initParticles()
+    }
+
+    onMounted(async () => {
+      await initParticles()
+      const observer = new ResizeObserver(async () => {
+        await reloadParticles()
+      })
+      observer.observe(particles.value)
     })
+
+    watch(props.options, async () => {
+      await reloadParticles()
+    })
+
     return {
       id,
-      options,
       cache,
-      initParticles
+      particles,
+      initParticles,
+      reloadParticles
     }
+
   }
 }
 </script>
